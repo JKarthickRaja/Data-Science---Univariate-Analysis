@@ -1,0 +1,17 @@
+def Outliererror:
+
+lesser=[]
+greater=[]
+
+for columnName in quan:
+    if(descriptive[columnName]["Min"]<descriptive[columnName]["Lesser"]):
+        lesser.append(columnName)
+    if(descriptive[columnName]["Max"]>descriptive[columnName]["Greater"]):
+        greater.append(columnName)
+
+def repairingtheoutlier:
+
+for column in lesser:
+    dataset[column][dataset[column]<descriptive[column]["Lesser"]]=descriptive[column]["Lesser"]
+for column in greater:
+    dataset[column][dataset[column]>descriptive[column]["Greater"]]=descriptive[column]["Greater"]
